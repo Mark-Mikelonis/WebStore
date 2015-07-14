@@ -1,8 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>View Order</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp" />
     Order Details:
 <br>
 <table border="0">
@@ -29,13 +32,18 @@
 		<th align="left">User Name:</th>
     	<td align="left">${order.user}</td> 
 	</tr> 
+	<tr>
+		<td><a href="../productorder/list.html?orderId=${order.orderId}">View Order Items</a></td>
+	</tr>
 	<tr>  
-		<th></th>
-    	<td><a href="edit/${order.orderId}.html">Edit</a></td> 
+    	<td><a href="edit/${order.orderId}.html">Edit Order Details</a></td> 
 	</tr> 
+	<tr>
+		<td><a href="../product/list.html">Add Items to Order</a></td> 
+	</tr>
 </table>
 <br>
-<a href="list.html">Back to Order List</a>
+<a href="list.html?userName=${pageContext.request.userPrincipal.name}">Back to Order List</a>
 <br><br>
 
 </body>

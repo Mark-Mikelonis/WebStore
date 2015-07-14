@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc 
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
  
-    <context:component-scan base-package="com.uciext.springfw.project.rest" />
+    <context:component-scan base-package="com.thricethree.spring.crud.rest" />
 	<mvc:annotation-driven/>
 
 </beans>

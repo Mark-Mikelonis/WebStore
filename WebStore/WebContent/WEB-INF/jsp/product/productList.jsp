@@ -7,9 +7,10 @@
 <title>Product List</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp" />
 	Products:
 	
-	<sf:form method="POST" commandName="selectedProducts" action="list.html">
+	<sf:form method="POST" commandName="selectedProducts" action="../productorder/listadd.html?user=${pageContext.request.userPrincipal.name}">
 		<div>
 			<c:forEach var="product" items="${productList}">
 				<sf:checkbox path="itemList" value="${product.productId}" />
@@ -19,9 +20,9 @@
 				<br>
 			</c:forEach>
 		</div>
- 		<input type="submit" value="Delete" />
+ 		<input type="submit" value="Add to Order" />
 	</sf:form>
 	<br>
-	<a href="add.html">Add New</a>
+	
 </body>
 </html>

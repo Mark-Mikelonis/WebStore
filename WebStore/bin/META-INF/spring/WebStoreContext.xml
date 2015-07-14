@@ -11,37 +11,36 @@
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <context:annotation-config />
-    <context:component-scan base-package="com.uciext" />
-
-	<bean id="catalogDao" class="com.uciext.springfw.project.dao.jdbc.JdbcCatalogDao">
+    <context:component-scan base-package="com.thricethree" />
+	<bean id="catalogDao" class="com.thricethree.spring.crud.dao.jdbc.JdbcCatalogDao">
 		<property name="dataSource" ref="webstoreDS" />
 	</bean>
 
-	<bean id="orderDao" class="com.uciext.springfw.project.dao.jdbc.JdbcOrderDao">
+	<bean id="orderDao" class="com.thricethree.spring.crud.dao.jdbc.JdbcOrderDao">
 		<property name="dataSource" ref="webstoreDS" />
 	</bean>
 
-	<bean id="productDao" class="com.uciext.springfw.project.dao.jdbc.JdbcProductDao">
+	<bean id="productDao" class="com.thricethree.spring.crud.dao.jdbc.JdbcProductDao">
 		<property name="dataSource" ref="webstoreDS" />
 	</bean>
 	
-	<bean id="productOrderDao" class="com.uciext.springfw.project.dao.jdbc.JdbcProductOrderDao">
+	<bean id="productOrderDao" class="com.thricethree.spring.crud.dao.jdbc.JdbcProductOrderDao">
 		<property name="dataSource" ref="webstoreDS" />
 	</bean>
 
 	<bean id="catalogService" scope="singleton"
-    	class="com.uciext.springfw.project.service.impl.CatalogServiceImpl">
+    	class="com.thricethree.spring.crud.service.impl.CatalogServiceImpl">
 		<property name="catalogDao" ref="catalogDao" />
 		<property name="productDao" ref="productDao" />
   	</bean>
   	
-	<bean id="orderService" class="com.uciext.springfw.project.service.impl.OrderServiceImpl">
+	<bean id="orderService" class="com.thricethree.spring.crud.service.impl.OrderServiceImpl">
 		<property name="orderDao" ref="orderDao" />
-  	</bean>
-  	<bean id="productOrderService" class="com.uciext.springfw.project.service.impl.ProductOrderServiceImpl">
+  	</bean>c
+  	<bean id="productOrderService" class="com.thricethree.spring.crud.service.impl.ProductOrderServiceImpl">
 		<property name="productOrderDao" ref="productOrderDao" />
   	</bean>
-  	<bean id="productService" class="com.uciext.springfw.project.service.impl.ProductServiceImpl">
+  	<bean id="productService" class="com.thricethree.spring.crud.service.impl.ProductServiceImpl">
 		<property name="productDao" ref="productDao" />
   	</bean>
 

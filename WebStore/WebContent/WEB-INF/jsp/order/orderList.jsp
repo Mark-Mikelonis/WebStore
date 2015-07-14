@@ -7,21 +7,21 @@
 <title>Order List</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp" />
+<%-- <c:if test="${userName == null}"> --%>
+<%-- 	<c:redirect url="list.html?userName=${pageContext.request.userPrincipal.name}"/> --%>
+<%-- 	</c:if> --%>
 	Orders:
 	
-	<sf:form method="POST" commandName="selectedOrders" action="list.html">
 		<div>
 			<c:forEach var="order" items="${orderList}">
-				<sf:checkbox path="itemList" value="${order.orderId}" />
 				<a href="view.html?orderId=${order.orderId}">
 					<c:out value="${order.orderId}" />
 				</a>
 				<br>
 			</c:forEach>
 		</div>
- 		<input type="submit" value="Delete" />
-	</sf:form>
 	<br>
-	<a href="add.html">Add New</a>
+	<a href="add.html">Create New Order</a>
 </body>
 </html>

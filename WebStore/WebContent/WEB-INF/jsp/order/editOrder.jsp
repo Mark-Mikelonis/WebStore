@@ -10,6 +10,7 @@
 
 
 <body>
+<jsp:include page="../common/header.jsp" />
 	Edit Order Details:
 	<br>
 	<sf:form method="POST" modelAttribute="order">
@@ -39,14 +40,14 @@
 				<td><sf:input path="user" size="20" id="user" /><br /> 
 				<sf:errors path="user" cssClass="error" /></td>
 			</tr>
-				<th></th>
+			<tr>
 				<td><input type="submit" value="Save" /></td>
 			</tr>
 		</table>
 	</sf:form>
 
 	<br>
-	<a href="../list.html">Cancel</a>
+	<a href="../list.html?userName=${order.user}">Cancel</a>
 	<br>
 	<br>
 
